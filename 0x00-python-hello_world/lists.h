@@ -2,23 +2,24 @@
 #define LISTS_H
 
 #include <stdlib.h>
+
 /**
- * struct node - singly linked list
- * @value: the integer
- * @next: the next node points
- * Description: node structure for the singly linked list
+ * struct listint_s - singly linked list
+ * @n: integer
+ * @next: points to the next node
+ *
+ * Description: singly linked list node structure
+ * 
  */
-typedef struct node
+typedef struct listint_s
 {
-	int value;
-	struct node *next;
-} node;
+    int n;
+    struct listint_s *next;
+} listint_t;
 
-typedef node listint_t;
-
-void print_listint(const node *h);
-listint_t add_nodeint(listint_t *head, const int n);
-void free_listint(listint_t head);
-int check_cycle(listint_t list);
+size_t print_listint(const listint_t *h);
+listint_t *add_nodeint(listint_t **head, const int n);
+void free_listint(listint_t *head);
+int check_cycle(listint_t *list);
 
 #endif /* LISTS_H */
